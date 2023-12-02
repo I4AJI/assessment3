@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MidTerm Exam #2 - Web Development - CCTB</title>
+  <meta name="description" content="MidTerm Exam #2 - Web Development - CCTB">
+
+  <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+  <!-- up to 10% speed up for external res -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <!-- preloading icon font is helping to speed up a little bit -->
+  <link rel="preload" href="fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/core.min.css">
+  <link rel="stylesheet" href="css/vendor_bundle.min.css">
+
+  <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/firebase.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- favicon -->
+  <link rel="shortcut icon"
+    href="https://canvascctb.s3.ca-central-1.amazonaws.com/account_1/attachments/95/CCTB_favicon.ico">
+  <link rel="apple-touch-icon"
+    href="https://cctb-assets.s3-ca-central-1.amazonaws.com/dist/images/apple-touch-icon-585e5d997d.png">
+
+</head>
+
+<body>
+
+  <div class="row g-0 bg-white min-vh-100 align-items-center">
+    <div class="col-lg-6 text-center text-lg-start overflow-hidden z-index-2">
+      <div class="px-3 py-6">
+
+        <div class="row">
+          <div class="col-sm-8 col-md-6 col-lg-9 col-xl-12 mx-auto max-w-450">
+            <img class="rounded mx-auto d-block w-50" <h1 class="fw-bold mt-3 mb-5 text-purple-500">Sign <span
+              class="text-danger">in</span> <span class="text-primary">CCTB</span></h1>
+
+            <form novalidate class="bs-validate" method="get" action="home.html">
+
+              <!-- email address -->
+              <div class="form-floating mb-3">
+                <input required type="email" class="form-control" id="account_email" placeholder="Email address">
+                <label for="account_email">Email address</label>
+              </div>
+
+              <!-- password -->
+              <div class="form-floating mb-3">
+                <input required type="password" class="form-control" id="account_passwd" placeholder="Password"
+                  autocomplete="new-password">
+                <label for="account_passwd">Password</label>
+
+                <!-- forgot -->
+                <a href="#" class="btn bg-transparent shadow-none link-muted position-absolute top-0 end-0 m-1">
+                  Forgot
+                </a>
+              </div>
+
+              <!-- submit button -->
+              <div class="d-grid mb-3">
+                <button id="sign-in-traditional" type="submit" class="btn btn-primary">
+                  <span>Sign in</span>
+                  <svg class="rtl-flip" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z">
+                    </path>
+                  </svg>
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-8 col-md-6 col-lg-9 col-xl-5 mx-auto">
+
+            <div
+              class="d-flex align-items-center justify-content-between w-100 max-w-250 mx-auto mb-1 small text-muted">
+              <hr class="w-100">
+              <span class="flex-none px-4">OR</span>
+              <hr class="w-100">
+            </div>
+
+            <div class="w-100 d-inline-grid gap-auto-3">
+              <a id="sign-in-google" title="Gmail Login" href="#"
+                class="btn bg-googleplay border w-100 mx-0 text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-google text-white" viewBox="0 0 16 16">
+                  <path
+                    d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                </svg>
+              </a>
+
+              <div id="recaptcha-container">
+
+                <a id="sign-in-phone" title="Cellphone login" href="#"
+                  class="btn bg-black border w-100 mx-0 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5" />
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="d-none d-lg-block min-vh-100 col-lg-6 bg-cover py-8 overlay-dark overlay-opacity-25"
+        style="background-image:url(images/img.jpg)">
+        <svg class="d-none d-lg-block position-absolute h-100 top-0 text-white ms-n5" style="width:6rem"
+          fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="50,0 100,0 50,100 0,100"></polygon>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+</svg>
+</div>
+</div>
+
+</body>
+
+</html>
